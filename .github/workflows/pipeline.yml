@@ -34,8 +34,11 @@ jobs:
 
       - name: Run pipeline
         env:
-          APIFY_API_TOKEN:   ${{ secrets.APIFY_API_TOKEN }}
+          APIFY_API_TOKEN:    ${{ secrets.APIFY_API_TOKEN }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_SENDER:       ${{ secrets.GMAIL_SENDER }}
+          SHEET_EDITOR_EMAIL: ${{ secrets.SHEET_EDITOR_EMAIL }}
+          SHEET_FOLDER_ID:    ${{ secrets.SHEET_FOLDER_ID }}
         run: |
           cd backend
           python3 main.py
