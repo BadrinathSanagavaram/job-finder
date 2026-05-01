@@ -1,0 +1,7 @@
+PASTE YOUR RESUME TEXT HERE
+
+Example skills to include:
+Python, SQL, Apache Spark, Kafka, Airflow, dbt, Snowflake, BigQuery,
+AWS (S3, Glue, Lambda, Redshift), GCP, Docker, Kubernetes,
+ETL pipelines, data warehousing, data lake, Databricks,
+pandas, NumPy, Git, CI/CD, Agile, REST APIs

@@ -1,0 +1,6 @@
+streamlit==1.33.0
+google-cloud-bigquery==3.25.0
+google-auth==2.29.0
+pandas==2.2.2
+plotly==5.22.0
+db-dtypes==1.2.0

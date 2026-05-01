@@ -1,0 +1,10 @@
+flask==3.0.3
+flask-cors==4.0.1
+scikit-learn==1.4.2
+requests==2.32.3
+google-cloud-bigquery==3.25.0
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+gspread==6.1.2
+pdfplumber==0.11.0
+python-dotenv==1.0.1
