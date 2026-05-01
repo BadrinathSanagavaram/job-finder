@@ -28,7 +28,7 @@ def _bq_client():
     if os.path.exists(sa_path):
         creds = Credentials.from_service_account_file(sa_path)
     else:
-        sa_info = dict(st.secrets["GCP_SERVICE_ACCOUNT"])
+        sa_info = json.loads(st.secrets["GCP_SERVICE_ACCOUNT"])
         creds   = Credentials.from_service_account_info(sa_info)
     return bigquery.Client(project=PROJECT, credentials=creds)
 
