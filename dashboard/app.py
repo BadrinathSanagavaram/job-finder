@@ -30,15 +30,15 @@ def _bq_client():
     else:
         sa_info = {
             "type": "service_account",
-            "project_id": st.secrets["GCP_PROJECT_ID"],
-            "private_key_id": st.secrets["GCP_PRIVATE_KEY_ID"],
+            "project_id": "job-finder-494904",
+            "private_key_id": "8540d60abd250527f7c31e4bce7b974d4d02f2ac",
             "private_key": st.secrets["GCP_PRIVATE_KEY"],
-            "client_email": st.secrets["GCP_CLIENT_EMAIL"],
-            "client_id": st.secrets["GCP_CLIENT_ID"],
+            "client_email": "bigquery-admin@job-finder-494904.iam.gserviceaccount.com",
+            "client_id": "115263322098198221762",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_x509_cert_url": st.secrets["GCP_CLIENT_CERT_URL"],
+            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-admin%40job-finder-494904.iam.gserviceaccount.com",
             "universe_domain": "googleapis.com",
         }
         creds = Credentials.from_service_account_info(sa_info)
