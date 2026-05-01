@@ -3,7 +3,7 @@ Job Finder Dashboard — Streamlit
 Hosted free on Streamlit Community Cloud.
 Connects to BigQuery using service account credentials.
 """
-import json, os, base64
+import json, os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -28,7 +28,7 @@ def _bq_client():
     if os.path.exists(sa_path):
         creds = Credentials.from_service_account_file(sa_path)
     else:
-        sa_info = json.loads(base64.b64decode(st.secrets["GCP_SERVICE_ACCOUNT"]).decode())
+        sa_info = json.loads(st.secrets["GCP_SERVICE_ACCOUNT"])
         creds   = Credentials.from_service_account_info(sa_info)
     return bigquery.Client(project=PROJECT, credentials=creds)
 
