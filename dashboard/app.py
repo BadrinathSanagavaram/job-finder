@@ -28,8 +28,20 @@ def _bq_client():
     if os.path.exists(sa_path):
         creds = Credentials.from_service_account_file(sa_path)
     else:
-        sa_info = json.loads(st.secrets["GCP_SERVICE_ACCOUNT"])
-        creds   = Credentials.from_service_account_info(sa_info)
+        sa_info = {
+            "type": "service_account",
+            "project_id": st.secrets["GCP_PROJECT_ID"],
+            "private_key_id": st.secrets["GCP_PRIVATE_KEY_ID"],
+            "private_key": st.secrets["GCP_PRIVATE_KEY"],
+            "client_email": st.secrets["GCP_CLIENT_EMAIL"],
+            "client_id": st.secrets["GCP_CLIENT_ID"],
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+            "client_x509_cert_url": st.secrets["GCP_CLIENT_CERT_URL"],
+            "universe_domain": "googleapis.com",
+        }
+        creds = Credentials.from_service_account_info(sa_info)
     return bigquery.Client(project=PROJECT, credentials=creds)
 
 client = _bq_client()
