@@ -69,7 +69,7 @@ BLACKLISTED_JOB_BOARDS = [
 # ── Sponsorship rejection keywords ────────────────────────────────────────────
 NO_SPONSORSHIP_KEYWORDS = [
     "no sponsorship", "no visa sponsorship", "will not sponsor", "cannot sponsor",
-    "unable to sponsor", "not able to sponsor", "does not sponsor",
+    "unable to sponsor", "not able to sponsor", "does not sponsor", "do not sponsor",
     "sponsorship is not available", "sponsorship not available",
     "no h1b", "no h-1b", "no h 1b",
     "must be authorized to work in the u", "must be legally authorized",
