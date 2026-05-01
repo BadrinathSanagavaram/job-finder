@@ -197,15 +197,15 @@ with tab3:
                     WHEN ats_score BETWEEN 70 AND 79 THEN '70–79'
                     WHEN ats_score BETWEEN 80 AND 89 THEN '80–89'
                     ELSE '90–100'
-                END AS range, COUNT(*) AS cnt
+                END AS score_range, COUNT(*) AS cnt
             FROM `{DS}.fact_ats_results`
             WHERE passed_threshold = TRUE
-            GROUP BY range ORDER BY range
+            GROUP BY score_range ORDER BY score_range
         """)
         if not dist.empty:
-            fig = px.bar(dist, x="range", y="cnt",
+            fig = px.bar(dist, x="score_range", y="cnt",
                          title="ATS Score Distribution (Matched Jobs)",
-                         labels={"range":"Score","cnt":"Count"},
+                         labels={"score_range":"Score","cnt":"Count"},
                          color_discrete_sequence=["#2563eb"])
             st.plotly_chart(fig, use_container_width=True)
 
